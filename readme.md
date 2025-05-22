@@ -1,4 +1,8 @@
 ```bash
+  npm i;
+```
+
+```bash
   create database todo_db;
 ```
 
