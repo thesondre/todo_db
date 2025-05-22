@@ -12,15 +12,15 @@ CREATE TABLE todos (
 ```
 
 
-```javascript
-    db.query('INSERT INTO todos (text) VALUES (?)', [text], (err) => {
+```
+db.query('INSERT INTO todos (text) VALUES (?)', [text], (err) => {
     if (err) return res.status(500).send(err.message);
     res.redirect('/');
-    });
+});
 ```
 
 
-```javascript
+```
 db.query('UPDATE todos SET done = TRUE WHERE id = ?', [id], (err) => {
     if (err) return res.status(500).send(err.message);
     res.redirect('/');
