@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="nn">
+<head>
+  <meta charset="UTF-8" />
+  <title>Oppgåveliste</title>
+  <link rel="stylesheet" href="/index.css" />
+</head>
+<body>
+  <h1>📝 Oppgåveliste</h1>
+
+  <form action="/add" method="POST">
+    <input type="text" name="text" placeholder="Ny oppgåve" required />
+    <button type="submit">Legg til</button>
+  </form>
+
+  <ul>
+    <% todos.forEach(todo => { %>
+      <li class="<%= todo.done ? 'done' : '' %>">
+        <form action="/done/<%= todo.id %>" method="POST" style="display:inline;">
+          <button type="submit"><%= todo.done ? "✅" : "✔️" %></button>
+        </form>
+        <%= todo.text %>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
